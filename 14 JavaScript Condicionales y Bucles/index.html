@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 02</title>
+</head>
+<body>
+    <script>
+        // var edad = 13;
+        // console.log('Edad: ' + edad);
+
+        // if (edad >= 13) {
+        //     alert('Puede registrarte!');
+        // } else {
+        //     alert('No puede registrarse');
+        // }
+
+        // var edad = 13;
+        // console.log('Edad: ' + edad);
+
+        // var mensaje = edad >= 13 ? 'Puede registrarte!' : 'No puede registrarse';
+        // console.log(mensaje);
+
+        // ---
+
+        // var semaforo = 'Rojo';
+
+        // if (semaforo == 'Verde') {
+        //     console.log('Puede cruzar');
+        // } else if (semaforo == 'Amarillo') {
+        //     console.log('Cuidado!!!');
+        // } else {
+        //     console.log('No puede cruzar');
+        // }
+
+        // var semaforo = 'Verde';
+
+        // switch (semaforo) {
+        //     case 'Verde':
+        //         console.log('Puede cruzar');
+        //         break;
+        //     case 'Amarillo': 
+        //         console.log('Cuidado!!!');
+        //         break;
+        //     case 'Rojo':
+        //         console.log('No puede cruzar');
+        //         break;
+        //     default: 
+        //         console.log('El semanforo no funciona');
+        // }
+
+        // ---
+
+        // var edad = prompt('Ingrese su edad');
+        // edad = Number(edad);
+        // // console.log(edad, typeof edad);
+        // var dia = prompt('Ingrese el dia');
+
+        // if (edad <= 13 && dia == 'Miercoles') {
+        //     console.log('Promo Nro 1');
+        // }
+
+        // if (edad <= 18 || dia == 'Jueves') {
+        //     console.log('Promo Nro 2');
+        // }
+
+        // ---
+
+        // var i = 0;
+
+        // while(i < 3) {
+        //     console.log(i);
+        //     // i = i + 1;
+        //     // i += 1;
+        //     i++;
+        // }
+
+        var iteraciones = prompt('Cuantas iteraciones?');
+        iteraciones = Number(iteraciones);
+
+        console.log(iteraciones, isNaN(iteraciones), !isNaN(iteraciones));
+
+        if (isNaN(iteraciones) == false) {
+            for (var i = 0; i < iteraciones; i += 1) {
+                console.log(i);
+            }
+        }
+    </script>
+</body>
+</html>
