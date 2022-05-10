@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 01</title>
+    <style>
+        body {
+            min-height: 200vh;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vue.js</h1>
+
+    <div id="app">
+        <h2>{{ nombre }}</h2>
+
+        <p>{{ texto }}</p>
+
+        <a v-bind:href="enlace.url">{{ enlace.name }}</a> - 
+        <a :href="enlace.url">{{ enlace.name }}</a>
+
+        <ul>
+            <li v-for="lenguaje in lenguajes">{{ lenguaje }}</li>
+        </ul>
+
+        <table border="1">
+            <tr>
+                <th>#</th>
+                <th>email</th>
+                <th></th>
+            </tr>
+            <tr v-for="usuario in usuarios">
+                <td>{{ usuario.id }}</td>
+                <td>{{ usuario.email }}</td>
+                <td>
+                    <p v-if="usuario.admin == 5">Root</p>
+                    <p v-else-if="usuario.admin == 1">Admin</p>
+                    <p v-else>Usuario</p>
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <input type="text" v-model="mensaje">
+        <p>{{ mensaje }}</p>
+
+        <hr>
+
+        <p v-on:click="sumarAlContador()">Sumar</p>
+        <button type="button" @click="contador--">Restar</button>
+        <p>{{ contador }}</p>
+
+        <hr>
+
+        <input type="date">
+    </div>
+
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
