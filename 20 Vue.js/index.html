@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 02</title>
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Vue 3.x</h1>
+        <p>{{nombre}} {{apellido}}</p>
+        <p>{{getNombreCompleto()}}</p>
+        <p>{{nombreCompleto}}</p>
+        <div><input type="text" v-model="nombre"></div>
+
+        <h2>Componentes</h2>
+
+        <cac-usuarios />
+
+        <cac-titulo></cac-titulo>
+        <cac-titulo mensaje="Hola desde el props" />
+    </div>
+
+    <!-- <input type="date"> -->
+
+    <script src="js/script.js"></script>
+</body>
+</html>
