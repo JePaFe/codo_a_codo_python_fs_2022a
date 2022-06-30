@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+</head>
+<body>
+    <h1>Crear empleado</h1>
+
+    <form action="/store" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="nombre">Nombre: </label>
+            <input type="text" id="nombre" name="nombre">
+        </div>
+        <div>
+            <label for="email">Correo: </label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="imagen">Foto: </label>
+            <input type="file" id="imagen" name="imagen">
+        </div>
+        <button type="submit">Guardar</button>
+    </form>
+</body>
+</html>
