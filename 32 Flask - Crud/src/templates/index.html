@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+</head>
+<body>
+    <h1>{{ mensaje }}</h1>
+    <a href="/create">Crear</a>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>nombre</th>
+                <th>correo</th>
+                <th>imagen</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for empleado in empleados %}
+            <tr>
+                <td>{{ empleado['id'] }}</td>
+                <td>{{ empleado['nombre'] }}</td>
+                <td>{{ empleado['correo'] }}</td>
+                <td>
+                    <img width="100" src="{{ url_for('uploads', imagen=empleado['imagen']) }}" alt="{{ empleado['nombre'] }}">
+                </td>
+                <td>
+                    <a href="/edit/{{ empleado['id'] }}">Editar</a> | 
+                    <a href="/delete/{{ empleado['id'] }}">Borrar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>        
+    </table>
+</body>
+</html>
