@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h1>{{ mensaje }}</h1>
+    <a href="/create" class="btn btn-primary">Crear</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>nombre</th>
+                <th>correo</th>
+                <th>imagen</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for empleado in empleados %}
+            <tr>
+                <td>{{ empleado['id'] }}</td>
+                <td>{{ empleado['nombre'] }}</td>
+                <td>{{ empleado['correo'] }}</td>
+                <td>
+                    {% if empleado['imagen'] != None %}
+                        <img width="100" src="{{ url_for('uploads', imagen=empleado['imagen']) }}" alt="{{ empleado['nombre'] }}">
+                    {% else %}
+                        Sin imagen
+                    {% endif %}
+                </td>
+                <td>
+                    <a href="/edit/{{ empleado['id'] }}" class="btn btn-info">Editar</a> | 
+                    <a href="/delete/{{ empleado['id'] }}" class="btn btn-danger">Borrar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>        
+    </table>
+{% endblock %}

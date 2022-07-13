@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h1>Crear empleado</h1>
+
+    <form action="/store" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="nombre" class="form-label">Nombre: </label>
+            <input type="text" class="form-control" id="nombre" name="nombre">
+        </div>
+        <div>
+            <label for="email" class="form-label">Correo: </label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Prueba..." required>
+        </div>
+        <div>
+            <label for="imagen" class="form-label">Foto: </label>
+            <input type="file" class="form-control" id="imagen" name="imagen" placeholder="Prueba...">
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Guardar</button>
+        <a href="/" class="btn btn-secondary mt-3">Cancelar</a>
+    </form>
+{% endblock %}
